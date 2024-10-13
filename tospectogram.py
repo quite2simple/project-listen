@@ -27,7 +27,7 @@ def audio_to_log_mel_spectrogram(audio_fragment: np.ndarray, sample_rate=22050, 
             n_fft=n_fft
         )
 
-        log_mel_spectrogram = librosa.power_to_db(mel_spectrogram)
+        log_mel_spectrogram = librosa.power_to_db(mel_spectrogram, ref=np.max)
 
         res.append(log_mel_spectrogram)
 
