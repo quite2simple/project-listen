@@ -20,7 +20,7 @@ def audio_to_log_mel_spectrogram(audio_fragment: np.ndarray, sample_rate=22050, 
     for channel in audio_fragment:
 
         mel_spectrogram = librosa.feature.melspectrogram(
-            y=audio_fragment[0],
+            y=channel,
             sr=sample_rate,
             n_mels=n_mels,
             hop_length=hop_length,
